@@ -16,21 +16,6 @@
   --nav-height: 72px;
   --transition-fast: 150ms ease;
   --transition-normal: 200ms ease;
-}
-
-[data-theme="dark"] {
-  --color-bg: #0A1626;
-  --color-bg-alt: #0F2038;
-  --color-surface: #14294A;
-  --color-text-primary: #EDEFF3;
-  --color-text-secondary: #B7C0CE;
-  --color-text-muted: #8A95A6;
-  --color-border: #2A3F5E;
-  --color-white: #FFFFFF;
-  --color-light-grey: #0F2038;
-}
-
-:root:not([data-theme="dark"]) {
   --color-bg: #FFFFFF;
   --color-bg-alt: #F4F4F4;
   --color-surface: #FFFFFF;
@@ -678,46 +663,7 @@ img {
 }
 
 /* ============================================
-   DARK MODE TOGGLE
-   ============================================ */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.25rem;
-  line-height: 1;
-  color: var(--color-white);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-}
-
-.theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: scale(1.05);
-}
-
-.theme-toggle:focus-visible {
-  outline: 3px solid var(--color-amber);
-  outline-offset: 2px;
-}
-
-[data-theme="dark"] .theme-toggle {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: var(--color-amber);
-}
-
-/* ============================================
-   NAV UPDATES FOR MOBILE MENU & TOGGLE
+   NAV ACTIONS
    ============================================ */
 .nav__actions {
   display: flex;
@@ -839,27 +785,19 @@ img {
   text-align: center;
 }
 
-.mobile-menu__theme-toggle {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-}
-
 /* ============================================
    HOVER & FOCUS STATES
    ============================================ */
-a:not(.btn):not(.nav__link):not(.nav__cta):not(.theme-toggle):not(.mobile-menu__link):not(.skip-link):not(.faq__question):not(.footer__copyright):not(.mission__more-link) {
+a:not(.btn):not(.nav__link):not(.nav__cta):not(.mobile-menu__link):not(.skip-link):not(.faq__question):not(.footer__copyright):not(.mission__more-link) {
   transition: color var(--transition-fast);
 }
 
-a:hover:not(.btn):not(.nav__link):not(.nav__cta):not(.theme-toggle):not(.mobile-menu__link):not(.skip-link):not(.faq__question):not(.footer__copyright):not(.mission__more-link) {
+a:hover:not(.btn):not(.nav__link):not(.nav__cta):not(.mobile-menu__link):not(.skip-link):not(.faq__question):not(.footer__copyright):not(.mission__more-link) {
   color: var(--color-amber);
   text-decoration: underline;
 }
 
-a:focus-visible:not(.btn):not(.nav__link):not(.nav__cta):not(.theme-toggle):not(.mobile-menu__link):not(.skip-link):not(.faq__question):not(.footer__copyright):not(.mission__more-link) {
+a:focus-visible:not(.btn):not(.nav__link):not(.nav__cta):not(.mobile-menu__link):not(.skip-link):not(.faq__question):not(.footer__copyright):not(.mission__more-link) {
   outline: 3px solid var(--color-amber);
   outline-offset: 2px;
   border-radius: 2px;
@@ -868,10 +806,6 @@ a:focus-visible:not(.btn):not(.nav__link):not(.nav__cta):not(.theme-toggle):not(
 .package:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(11, 31, 58, 0.15);
-}
-
-[data-theme="dark"] .package:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .package:focus-within {
@@ -1153,16 +1087,4 @@ a:focus-visible:not(.btn):not(.nav__link):not(.nav__cta):not(.theme-toggle):not(
   background-color: #e0961e;
   border-color: #e0961e;
   transform: translateY(-1px);
-}
-
-/* Ensure buttons maintain transitions in dark mode */
-[data-theme="dark"] .btn--primary:hover,
-[data-theme="dark"] .btn--primary:focus {
-  background-color: #e0961e;
-  border-color: #e0961e;
-}
-
-[data-theme="dark"] .btn--outline:hover,
-[data-theme="dark"] .btn--outline:focus {
-  background-color: rgba(255, 255, 255, 0.15);
 }
