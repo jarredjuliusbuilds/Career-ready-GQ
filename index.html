@@ -11,19 +11,43 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="#top" class="nav__logo" aria-label="CareerReady Gqeberha home">
-      CareerReady <span class="nav__logo--accent">Gqeberha</span>
-    </a>
-    <ul class="nav__links" role="list">
-      <li><a href="#about" class="nav__link">About</a></li>
-      <li><a href="#packages" class="nav__link">Packages</a></li>
-      <li><a href="#contact" class="nav__link">Contact</a></li>
-    </ul>
-    <a href="https://wa.me/27678409547" class="nav__cta" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">WhatsApp Us</a>
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo" aria-label="CareerReady Gqeberha home">
+        CareerReady <span class="nav__logo--accent">Gqeberha</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#packages" class="nav__link">Packages</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button id="darkModeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">🌙</button>
+        <a href="https://wa.me/27678409547" class="nav__cta" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">WhatsApp Us</a>
+        <button id="hamburger" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+          <span class="hamburger__line" aria-hidden="true"></span>
+          <span class="hamburger__line" aria-hidden="true"></span>
+          <span class="hamburger__line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
-  <header class="hero" id="top" role="banner">
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay" aria-hidden="true"></div>
+  <aside id="mobileMenu" class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#about" class="mobile-menu__link">About</a>
+    <a href="#packages" class="mobile-menu__link">Packages</a>
+    <a href="#contact" class="mobile-menu__link">Contact</a>
+    <a href="https://wa.me/27678409547" class="btn btn--primary mobile-menu__cta" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+    <div class="mobile-menu__theme-toggle">
+      <button id="darkModeToggleMobile" class="theme-toggle" aria-label="Switch to dark mode" type="button">🌙</button>
+    </div>
+  </aside>
+
+  <header class="hero reveal" id="top" role="banner">
     <div class="hero__content">
       <p class="hero__eyebrow">CVs · Interview Prep · Nelson Mandela Bay</p>
       <h1 class="hero__heading">Your skills are real. Your CV should say so.</h1>
@@ -45,60 +69,148 @@
     </div>
   </header>
 
-  <section class="mission" id="about" aria-labelledby="mission-heading">
-    <h2 id="mission-heading" class="section__heading visually-hidden">Our Mission & Objective</h2>
-    <div class="mission__grid">
-      <article class="mission__card">
-        <span class="mission__label">Our Mission</span>
-        <h3 class="mission__title">Get every client in the room.</h3>
-        <p class="mission__text">CareerReady Gqeberha exists because good candidates get overlooked before anyone reads their story. We sell market knowledge first — knowing what local employers look for, and how to display and enhance the skills you already have — and apply it to your application, whatever job you're going for.</p>
-      </article>
-      <article class="mission__card">
-        <span class="mission__label">Our Objective</span>
-        <h3 class="mission__title">Close the gap between skill and selection.</h3>
-        <p class="mission__text">Nelson Mandela Bay has thousands of capable people and factories that still can't fill vacancies — that's a presentation gap, not a skills gap, and we close it for both Coega's technical roles and the city's factory floors.</p>
-      </article>
-    </div>
-    <p class="mission__more"><a href="about.html" class="mission__more-link">Want the full picture? Read our mission and objectives in detail →</a></p>
-  </section>
+  <main id="main">
+    <section class="mission reveal" id="about" aria-labelledby="mission-heading">
+      <h2 id="mission-heading" class="section__heading visually-hidden">Our Mission & Objective</h2>
+      <div class="mission__grid reveal-stagger">
+        <article class="mission__card">
+          <span class="mission__label">Our Mission</span>
+          <h3 class="mission__title">Get every client in the room.</h3>
+          <p class="mission__text">CareerReady Gqeberha exists because good candidates get overlooked before anyone reads their story. We sell market knowledge first — knowing what local employers look for, and how to display and enhance the skills you already have — and apply it to your application, whatever job you're going for.</p>
+        </article>
+        <article class="mission__card">
+          <span class="mission__label">Our Objective</span>
+          <h3 class="mission__title">Close the gap between skill and selection.</h3>
+          <p class="mission__text">Nelson Mandela Bay has thousands of capable people and factories that still can't fill vacancies — that's a presentation gap, not a skills gap, and we close it for both Coega's technical roles and the city's factory floors.</p>
+        </article>
+      </div>
+      <p class="mission__more"><a href="about.html" class="mission__more-link">Want the full picture? Read our mission and objectives in detail →</a></p>
+    </section>
 
-  <section class="packages" id="packages" aria-labelledby="packages-heading">
-    <h2 id="packages-heading" class="section__heading">Packages & Pricing</h2>
-    <div class="packages__grid">
-      <article class="package">
-        <div class="package__header">
-          <h3 class="package__name">Factory-Ready Starter Pack</h3>
-          <p class="package__price">R200</p>
-        </div>
-        <p class="package__target">For general workers, machine operators, entry-level & semi-skilled roles</p>
-        <ul class="package__features" role="list">
-          <li><span class="checkmark" aria-hidden="true"></span>ATS-optimised general manufacturing CV</li>
-          <li><span class="checkmark" aria-hidden="true"></span>Reliability/safety/production-focused language</li>
-          <li><span class="checkmark" aria-hidden="true"></span>One-page Factory Interview Prep Sheet</li>
-          <li><span class="checkmark" aria-hidden="true"></span>Simple cover letter</li>
-          <li><span class="checkmark" aria-hidden="true"></span>Delivered via WhatsApp or email in 2–3 working days</li>
-        </ul>
-        <a href="https://wa.me/27678409547" class="btn btn--primary package__cta" target="_blank" rel="noopener noreferrer">Get Started — R200</a>
-      </article>
-      <article class="package">
-        <div class="package__header">
-          <h3 class="package__name">Coega-Ready Technical Pack</h3>
-          <p class="package__price">R350</p>
-        </div>
-        <p class="package__target">For artisans & technicians (millwrights, CNC, instrumentation, supervisors)</p>
-        <ul class="package__features" role="list">
-          <li><span class="checkmark" aria-hidden="true"></span>ATS-optimised technical CV with trade-specific keywords</li>
-          <li><span class="checkmark" aria-hidden="true"></span>Quantified achievements in employer language</li>
-          <li><span class="checkmark" aria-hidden="true"></span>One-page Coega Interview Cheat Sheet with STAR-method answers</li>
-          <li><span class="checkmark" aria-hidden="true"></span>Tailored cover letter</li>
-          <li><span class="checkmark" aria-hidden="true"></span>Delivered via WhatsApp or email in 3–5 working days</li>
-        </ul>
-        <a href="https://wa.me/27678409547" class="btn btn--primary package__cta" target="_blank" rel="noopener noreferrer">Get Started — R350</a>
-      </article>
-    </div>
-  </section>
+    <section class="packages reveal" id="packages" aria-labelledby="packages-heading">
+      <h2 id="packages-heading" class="section__heading">Packages & Pricing</h2>
+      <div class="packages__grid reveal-stagger">
+        <article class="package">
+          <div class="package__header">
+            <h3 class="package__name">Factory-Ready Starter Pack</h3>
+            <p class="package__price">R200</p>
+          </div>
+          <p class="package__target">For general workers, machine operators, entry-level & semi-skilled roles</p>
+          <ul class="package__features" role="list">
+            <li><span class="checkmark" aria-hidden="true"></span>ATS-optimised general manufacturing CV</li>
+            <li><span class="checkmark" aria-hidden="true"></span>Reliability/safety/production-focused language</li>
+            <li><span class="checkmark" aria-hidden="true"></span>One-page Factory Interview Prep Sheet</li>
+            <li><span class="checkmark" aria-hidden="true"></span>Simple cover letter</li>
+            <li><span class="checkmark" aria-hidden="true"></span>Delivered via WhatsApp or email in 2–3 working days</li>
+          </ul>
+          <a href="https://wa.me/27678409547" class="btn btn--primary package__cta" target="_blank" rel="noopener noreferrer">Get Started — R200</a>
+        </article>
+        <article class="package">
+          <div class="package__header">
+            <h3 class="package__name">Coega-Ready Technical Pack</h3>
+            <p class="package__price">R350</p>
+          </div>
+          <p class="package__target">For artisans & technicians (millwrights, CNC, instrumentation, supervisors)</p>
+          <ul class="package__features" role="list">
+            <li><span class="checkmark" aria-hidden="true"></span>ATS-optimised technical CV with trade-specific keywords</li>
+            <li><span class="checkmark" aria-hidden="true"></span>Quantified achievements in employer language</li>
+            <li><span class="checkmark" aria-hidden="true"></span>One-page Coega Interview Cheat Sheet with STAR-method answers</li>
+            <li><span class="checkmark" aria-hidden="true"></span>Tailored cover letter</li>
+            <li><span class="checkmark" aria-hidden="true"></span>Delivered via WhatsApp or email in 3–5 working days</li>
+          </ul>
+          <a href="https://wa.me/27678409547" class="btn btn--primary package__cta" target="_blank" rel="noopener noreferrer">Get Started — R350</a>
+        </article>
+      </div>
+    </section>
 
-  <footer class="footer" id="contact" role="contentinfo">
+    <section class="faq reveal" aria-labelledby="faq-heading">
+      <div class="faq__container">
+        <h2 id="faq-heading" class="section__heading faq__heading">Frequently Asked Questions</h2>
+        <ul class="faq__list">
+          <li class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-1" type="button">
+              <span>How long does it take to get my CV?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div id="faq-answer-1" class="faq__answer" role="region" aria-labelledby="faq-answer-1">
+              <div class="faq__answer-content">
+                <p><strong>Draft answer — please confirm/edit:</strong> 2–3 working days for the Factory-Ready Starter Pack, 3–5 working days for the Coega-Ready Technical Pack.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-2" type="button">
+              <span>How do I pay, and when?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div id="faq-answer-2" class="faq__answer" role="region" aria-labelledby="faq-answer-2">
+              <div class="faq__answer-content">
+                <p><strong>Draft answer — please confirm/edit:</strong> Payment details are shared with you directly on WhatsApp once we've discussed your package and confirmed what you need.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-3" type="button">
+              <span>What do I need to send you to get started?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div id="faq-answer-3" class="faq__answer" role="region" aria-labelledby="faq-answer-3">
+              <div class="faq__answer-content">
+                <p><strong>Draft answer — please confirm/edit:</strong> Your current CV if you have one, and the job or role you're applying for. If you don't have a CV yet, that's fine too — just tell us about your work history and the role you want.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-4" type="button">
+              <span>Can I request changes after I receive my CV?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div id="faq-answer-4" class="faq__answer" role="region" aria-labelledby="faq-answer-4">
+              <div class="faq__answer-content">
+                <p><strong>Draft answer — please confirm/edit:</strong> Yes — we include a round of revisions to make sure it's right before you use it.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-5" type="button">
+              <span>Do you only work with factory and Coega jobs?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div id="faq-answer-5" class="faq__answer" role="region" aria-labelledby="faq-answer-5">
+              <div class="faq__answer-content">
+                <p><strong>Draft answer — please confirm/edit:</strong> No — those are our two built packages, but we write CVs for any job. Message us on WhatsApp and we'll tell you which package fits, or tailor something to your role.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-6" type="button">
+              <span>Do you offer interview coaching beyond the prep sheet?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div id="faq-answer-6" class="faq__answer" role="region" aria-labelledby="faq-answer-6">
+              <div class="faq__answer-content">
+                <p><strong>Draft answer — please confirm/edit:</strong> Yes — a 30-minute mock interview add-on is available over WhatsApp video for R250.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal" id="contact" role="contentinfo">
     <div class="footer__content">
       <h2 class="footer__heading">Ready when you are.</h2>
       <p class="footer__text">Send your current CV and target role — we'll take it from there.</p>
@@ -106,5 +218,15 @@
       <p class="footer__copyright">CareerReady Gqeberha · Nelson Mandela Bay, Eastern Cape</p>
     </div>
   </footer>
+
+  <a href="https://wa.me/27678409547" class="fab-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.472.099-.174.05-.369-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378 9.86 9.86 0 01-1.379-5.031h-.003A9.87 9.87 0 012.25 12.25c0-2.66 1.09-5.14 2.898-6.937a9.825 9.825 0 016.951-2.914 9.828 9.828 0 016.951 2.914 9.825 9.825 0 012.898 6.937c0 2.659-1.08 5.13-2.887 6.92a9.839 9.839 0 01-3.458 1.137"/></svg>
+  </a>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
