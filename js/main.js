@@ -98,57 +98,6 @@
   });
 
   // ============================================
-  // SCROLL REVEAL ANIMATIONS
-  // ============================================
-  function initScrollReveal() {
-    const revealSelectors = '.reveal, .reveal-stagger';
-    const revealElements = document.querySelectorAll(revealSelectors);
-
-    if (!revealElements.length) return;
-
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    );
-
-    revealElements.forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 400ms ease, transform 400ms ease';
-      revealObserver.observe(el);
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      revealElements.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
-        if (inViewport) {
-          el.classList.add('is-revealed');
-          revealObserver.unobserve(el);
-        }
-      });
-    });
-  }
-
-  if ('IntersectionObserver' in window) {
-    initScrollReveal();
-  } else {
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => {
-      el.classList.add('is-revealed');
-    });
-  }
-
-  // ============================================
   // SCROLL PROGRESS BAR
   // ============================================
   const progressBar = document.getElementById('scrollProgress');
