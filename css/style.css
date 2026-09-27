@@ -405,8 +405,121 @@ img {
   background-position: center;
 }
 
+.package__badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-navy);
+  background-color: var(--color-amber);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.package__standard-price {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
 .package__cta {
   width: 100%;
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-it-works {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+}
+
+.how-it-works__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.how-it-works__step {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.how-it-works__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--color-white);
+  background-color: var(--color-amber);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.how-it-works__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.how-it-works__text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.footer__hours {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 760px) {
+  .how-it-works__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .how-it-works__step {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 60px 0;
+  }
+
+  .how-it-works__number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .how-it-works__title {
+    font-size: 1.125rem;
+  }
+
+  .how-it-works__text {
+    font-size: 0.875rem;
+  }
 }
 
 .footer {
