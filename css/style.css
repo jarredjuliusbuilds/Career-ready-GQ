@@ -218,6 +218,7 @@ img {
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 24px;
+  color: var(--color-white);
 }
 
 .hero__subtext {
