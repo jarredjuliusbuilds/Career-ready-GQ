@@ -13,15 +13,6 @@ careerready-website/
 └── README.md
 ```
 
-## WhatsApp Placeholder
-
-All WhatsApp links use the placeholder number `27XXXXXXXXX`. Replace it with your real number before deploying.
-
-Find all instances:
-```bash
-grep -r "27XXXXXXXXX" .
-```
-
 ## Deploy Free via GitHub Pages
 
 1. **Create a new repository on GitHub**
